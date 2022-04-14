@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+xrandr --output VGA1 --auto --right-of LVDS1
+
+xsetroot -cursor_name left_ptr
+
+feh --bg-scale /usr/share/backgrounds/wallpaper.jpg
+
+killall -w picom sxhkd xss-lock dunst plank
+
+eww kill
+
+picom -b
+
+sxhkd &
+
+xss-lock lock &
+
+dunst &
+
+plank &
+
+eww open-many RamMod \
+         TimeMod \
+         CpuMod \
+         FsMod \
+         LaunchMod \
+         NetMod
+
